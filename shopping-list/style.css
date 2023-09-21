@@ -57,6 +57,11 @@ header h1 {
   outline: none;
 }
 
+.hide-filter,
+.hide-btn {
+  display: none;
+}
+
 /* Buttons */
 .btn {
   background-color: #333;
