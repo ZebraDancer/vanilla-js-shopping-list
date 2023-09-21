@@ -36,4 +36,14 @@ const createNewItem = (newItem) => {
   unorderedList.appendChild(li);
 };
 
+const removeItem = (e) => {
+  //you want to target the i element, not the whole ul or li
+  //its parent is the button and in order to grab that from the DOM, you need to target the parent element of i - button - and you do so by targetting the class of "remove-item"
+  if (e.target.parentElement.classList.contains('remove-item')) {
+    //you need to go two levels up in order to target the actual li to be deleted, hence the double parentElement
+    e.target.parentElement.parentElement.remove();
+  }
+};
+
+unorderedList.addEventListener('click', removeItem);
 form.addEventListener('submit', handleFormSubmit);
